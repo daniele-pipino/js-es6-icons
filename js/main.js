@@ -13,15 +13,25 @@ Creiamo una select con i tipi di icone e usiamola per filtrare le icone */
 // recupero elemento html
 
 const renderIcons = (obj) => {
+
     // recupero elemento html
     const display = document.querySelector('#display .row')
 
 
+
     // ciclo per stampare ogni carta 
     let iconTemplate = '';
-    icons.forEach((icon) => {
+    icons.forEach((icon, index) => {
+
+        // gestione offset
+        if (index % 5 == 0) {
+            hasOffset = 'offset-md-1';        // Ho riguardato l'esempio di Marco
+        } else {
+            hasOffset = '';
+        };
+
         iconTemplate += `
-        <div class="col-sm-4 col-md-2 ">
+        <div class="col-sm-4 col-md-2 ${hasOffset}">
             <div class="card">
                <div class="card-body text-center">
                     <i class="${icon.family} ${icon.prefix}${icon.name} fa-2x"></i>
@@ -31,6 +41,8 @@ const renderIcons = (obj) => {
         </div>
         `
     })
+
+    // stampa in pagina
     display.innerHTML = iconTemplate;
 }
 
