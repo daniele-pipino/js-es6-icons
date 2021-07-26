@@ -4,3 +4,40 @@ Milestone 2
 Coloriamo le icone per tipo
 Milestone 3
 Creiamo una select con i tipi di icone e usiamola per filtrare le icone */
+
+// creare un template in html
+// 1- Ciclare per ogni elemento nell'array delle card
+// 2- riprodurre il template per ogni oggetto
+
+
+// recupero elemento html
+
+const renderIcons = (obj) => {
+    // recupero elemento html
+    const display = document.querySelector('#display .row')
+
+
+    // ciclo per stampare ogni carta 
+    let iconTemplate = '';
+    icons.forEach((icon) => {
+        iconTemplate += `
+        <div class="col-sm-4 col-md-2 ">
+            <div class="card">
+               <div class="card-body text-center">
+                    <i class="${icon.family} ${icon.prefix}${icon.name} fa-2x"></i>
+                    <h6>${icon.name}</h6>
+                </div>
+            </div>
+        </div>
+        `
+    })
+    display.innerHTML = iconTemplate;
+}
+
+renderIcons(icons);
+
+
+// name: 'cat',
+// prefix: 'fa-',
+// type: 'animal',
+// family: 'fas',
