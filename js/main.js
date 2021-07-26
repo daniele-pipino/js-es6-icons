@@ -34,7 +34,7 @@ const renderIcons = (obj) => {
         <div class="col-sm-4 col-md-2 ${hasOffset}">
             <div class="card">
                <div class="card-body text-center">
-                    <i class="${icon.family} ${icon.prefix}${icon.name} fa-2x"></i>
+                    <i class="${icon.family} ${icon.prefix}${icon.name} ${icon.type}-color fa-2x"></i>
                     <h6>${icon.name}</h6>
                 </div>
             </div>

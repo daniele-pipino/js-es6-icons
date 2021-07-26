@@ -6,3 +6,14 @@
     height: calc(100vh - 130px);
 }
 
+.animal-color{
+    color: blue;
+}
+
+.vegetable-color{
+    color: orange;
+}
+
+.user-color{
+    color: purple;
+}
