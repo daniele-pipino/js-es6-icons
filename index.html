@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <!-- header -->
     <header>
         <!-- navbar -->
         <nav class="navbar navbar-light bg-light">
@@ -26,14 +27,15 @@
         <section id="filter-section" class="bg-primary d-flex align-items-center justify-content-center">
             <!-- select filter -->
             <h5 class="text-white">FILTRA PER TIPO</h5>
-            <select name="Filter" id="type-filter">
-                <option selected>All</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <select id="type-filter">
+                <option selected value="all">all</option>
+                <option value="animal">animal</option>
+                <option value="vegetable">vegetable</option>
+                <option value="user">user</option>
             </select>
         </section>
     </header>
+    <!-- main -->
     <main>
         <section id="main-section" class="bg-secondary p-5">
             <div class="container" id="display">

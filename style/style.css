@@ -2,9 +2,7 @@
     min-height: 70px;
 }
 
-#main-section{
-    height: calc(100vh - 130px);
-}
+
 
 .animal-color{
     color: blue;

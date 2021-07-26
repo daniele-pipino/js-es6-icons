@@ -10,18 +10,15 @@ Creiamo una select con i tipi di icone e usiamola per filtrare le icone */
 // 2- riprodurre il template per ogni oggetto
 
 
-// recupero elemento html
-
 const renderIcons = (obj) => {
 
     // recupero elemento html
-    const display = document.querySelector('#display .row')
-
-
+    const display = document.querySelector('#display .row');
 
     // ciclo per stampare ogni carta 
     let iconTemplate = '';
-    icons.forEach((icon, index) => {
+
+    obj.forEach((icon, index) => {
 
         // gestione offset
         if (index % 5 == 0) {
@@ -40,7 +37,7 @@ const renderIcons = (obj) => {
             </div>
         </div>
         `
-    })
+    });
 
     // stampa in pagina
     display.innerHTML = iconTemplate;
@@ -48,8 +45,22 @@ const renderIcons = (obj) => {
 
 renderIcons(icons);
 
+// gestione filtro
 
-// name: 'cat',
-// prefix: 'fa-',
-// type: 'animal',
-// family: 'fas',
+let filter = document.getElementById('type-filter');
+
+filter.addEventListener('change', () => {
+    // recupero value select
+    const filterValue = filter.value;
+    console.log(filterValue);
+
+
+    // gestione casi
+    if (filterValue === 'all') {
+        renderIcons(icons);
+        return;
+    }
+
+    const filteredIcon = icons.filter((icon) => filterValue === icon.type);
+    renderIcons(filteredIcon);
+});
